@@ -16,8 +16,7 @@ function myFunction() {
 myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-
-
+/*Answer: In this example, the nestedFunction is function scoped.It exists within myFunction. When nestedFunction is invoked , it is reaching into myFunction to look for variable internal's value and when it finds it is console logging it's value.*/
 
 
 
@@ -60,12 +59,12 @@ const zooAnimals = [
 
   function animalNames(array){
     /*Your Code Here*/
-   const displayNames = [];
+   const displayNames = []; // creating an empty array. 
    array.forEach(function(item) {
-      return displayNames.push(`name: ${item['animal_name']}, scientific: ${item['scientific_name']}`);
+      return displayNames.push(`name: ${item['animal_name']}, scientific: ${item['scientific_name']}`);//iterating through every array item.
       
     });
-    return displayNames;
+    return displayNames; //returns the new array. 
   }
   console.log(animalNames(zooAnimals));
 
@@ -77,10 +76,10 @@ const zooAnimals = [
 
   function lowerCaseNames(data){
     /*Your Code Here*/
-    const newAnimalNames = data.map(function(item){
+    const newAnimalNames = data.map(function(item){ // iterating through the array and converting the data into lowercase. 
       return item.animal_name.toLowerCase();
     });
-    return newAnimalNames;
+    return newAnimalNames; //returns the new array 
   }
   console.log(lowerCaseNames(zooAnimals));
   
@@ -92,9 +91,9 @@ const zooAnimals = [
   function lowPopulationAnimals(array){
     /*Your Code Here*/
     const lowAnimalPopl = array.filter(function(item){
-      return item.population < 5;
+      return item.population < 5; //filtering to process population less than 5
     });
-    return lowAnimalPopl;
+    return lowAnimalPopl; //returning variable
   }
   console.log(lowPopulationAnimals(zooAnimals));
 
@@ -108,7 +107,7 @@ const zooAnimals = [
     /*Your Code Here*/
     const totalpopulation = array.reduce(function(acc, item){
       return acc + item['population'];
-    }, 0);
+    }, 0); //initializing with value 0 and reduce function taking in the running total/current item is processing in the array
     return totalpopulation;
   }
   console.log(USApop(zooAnimals));
@@ -121,7 +120,7 @@ const zooAnimals = [
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
 
-  function consume(a, b, cb){
+  function consume(a, b, cb){ //taking in params and callback function
     /*Your Code Here */
     return cb(a, b);
   }
@@ -164,9 +163,9 @@ function greeting(string1, string2, greetingCb){
 /* 🐴🐴🐴 Step 1: Base Constructor 🐴🐴🐴
  Use the constructor function named CuboidMaker to accept properties for length, width, and height which can be initialized as an object
 */
-function CuboidMaker(attr){
+function CuboidMaker(attr){ // initializing objects
   /*Your Code Here */
-  this.length = attr.length;
+  this.length = attr.length; 
   this.width = attr.width;
   this.height = attr.height;
 }
@@ -175,7 +174,7 @@ function CuboidMaker(attr){
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴
   Create a method called volume using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
   Formula for cuboid volume: length * width * height   */
-CuboidMaker.prototype.volume = function(){
+CuboidMaker.prototype.volume = function(){ //function for volume method.
 
   return this.length * this.width * this.height;
 };
@@ -187,7 +186,7 @@ CuboidMaker.prototype.volume = function(){
   Create another method called surfaceArea using CuboidMaker's prototype that returns the surface area of a given cuboid's length, width, and height. 
   Formula for cuboid surface area of a cube: 
   2 * (length * width + length * height + width * height)  */
-CuboidMaker.prototype.surfaceArea =function(){
+CuboidMaker.prototype.surfaceArea =function(){ //function for surface area method. 
   return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
 };
 
@@ -198,7 +197,7 @@ CuboidMaker.prototype.surfaceArea =function(){
   Create an object called cuboid that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
 
-  const cuboid = new CuboidMaker({
+  const cuboid = new CuboidMaker({ //binding the object
     length: 4,
     width: 5,
     height: 5,
@@ -216,19 +215,19 @@ console.log(cuboid.surfaceArea()); // 130
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
 class CuboidMakerTwo{
-  constructor (attr){
+  constructor (attr){ //initializing objects using constructor 
     this.length = attr.length;
     this.width = attr.width;
     this.height = attr.height;
   }
-  volume(){
+  volume(){ //volume method.
     return this.length * this.width * this.height;
   }
-  surfaceArea(){
+  surfaceArea(){ //surface area method.
     return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
   }
 }
-const cuboidTwo = new CuboidMakerTwo({
+const cuboidTwo = new CuboidMakerTwo({ //binding the object
       length: 4,
       width: 5,
       height: 5,
