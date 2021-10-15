@@ -119,10 +119,14 @@ const zooAnimals = [
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
 
-  function consume(/*Your Code Here */){
+  function consume(a, b, cb){
     /*Your Code Here */
+    return cb(a, b);
   }
- 
+  function lastcb(a, b){
+    return `${a} and ${b}`
+  }
+ console.log(consume('2', '3',lastcb));
   
   /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
  // 🦁🦁🦁 Use add to return the sum of two numbers 🦁🦁🦁
